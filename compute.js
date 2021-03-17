@@ -19,13 +19,16 @@ const server =
 
       if (req.method === 'GET' ) {
           var x = Number(search_params.get("x"));
-       
-          console.log("Look for query parameter data: " + search_params.get("data"))
+          var y  = Number(search_params.get("y"));
 
+       console.log(x);
+       console.log(y);
+          console.log("Look for query parameter data: " + search_params.get("x"));
+          console.log("Look for query parameter data: " + search_params.get("y"));
           // Process the queries here
           res.statusCode = 200      //code for OK
           res.setHeader('Content-Type', 'text/plain') 
-          res.write(`Math.abs(${x}) is ${Math.abs(x)} & Math.asinh(${x}) is ${Math.asinh(x)}`)
+          res.write(`Math.abs(${x}) is ${Math.abs(x)} & Math.asinh(${y}) is ${Math.asinh(y)}`)
           res.end();
         
       } else {
